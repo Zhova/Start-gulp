@@ -1,14 +1,10 @@
 include bemto/bemto.pug
 
 //- include partials
-//- Хедер
-include _partials/header.pug
 
 //- general
 include _pages/general-page.pug
 
-//- Футер
-include _partials/footer.pug
 
 
 
@@ -26,9 +22,7 @@ html
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 
 	body
-		+header
 		+general-page
-		+footer
 
 
 

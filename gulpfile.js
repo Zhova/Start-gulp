@@ -6,7 +6,7 @@ const gulp = require('gulp'),
 		del = require('del'),
 		browserSync = require('browser-sync').create(),
 		pug = require('gulp-pug'),
-		sass = require('gulp-sass'),
+		sass = require('gulp-sass')(require('sass'))
 		imagemin = require('gulp-imagemin'),
 		babel = require('gulp-babel');
 
@@ -19,12 +19,10 @@ const cssFiles = [
 	'./node_modules/normalize.css/normalize.css',
 	'./src/css/style.sass',
 	'./src/css/media.sass'
-	
 ];
 
 const jsFiles = [
-	'./src/js/script_1.js',
-	'./src/js/script_2.js'
+	'./src/js/script_1.js'
 ];
 
 const libs = [
@@ -46,12 +44,6 @@ function Html() {
 				.pipe(gulp.dest('./build'))
 				.pipe(browserSync.stream());
 }
-
-// function Php() {
-// 	return gulp.src(php)
-// 				.pipe(gulp.dest('./build'))
-// 				.pipe(browserSync.stream());
-// }
 
 
 function Styles() {
